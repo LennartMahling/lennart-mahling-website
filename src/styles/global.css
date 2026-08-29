@@ -56,20 +56,24 @@ a {
     margin-inline: auto;
 }
 
-#top{
-    scroll-margin-top: 88px;
+#top {
+    scroll-margin-top: 68px;
 }
 
-#ueber-mich{
+#ueber-mich {
     scroll-margin-top: -50px;
 }
 
-#arbeiten{
+#arbeiten {
     scroll-margin-top: 88px;
 }
 
-#leistungen{
-    scroll-margin-top: -60px;
+#leistungen {
+    scroll-margin-top: -147px;
+}
+
+#portfolio {
+    scroll-margin-top: -70px;
 }
 
 
@@ -504,6 +508,172 @@ h2 em {
 
 
 /* ==========================================================================
+   8b. PORTFOLIO TEASER SECTION
+   ========================================================================== */
+
+.portfolio-section {
+    padding-block: 160px;
+    border-top: 1px solid var(--color-border);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Visuelle Teaser Card */
+.portfolio-preview-card {
+    background: #111113;
+    border: 1px solid #2a2a2e;
+    border-radius: 8px;
+    padding: 28px;
+    color: #e5e5e7;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.portfolio-preview-card:hover {
+    transform: translateY(-4px);
+    border-color: #44444a;
+}
+
+.portfolio-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #252529;
+    margin-bottom: 24px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.window-controls span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #333338;
+}
+
+.card-tag {
+    font: 500 10px var(--font-mono);
+    color: #888890;
+    letter-spacing: 0.08em;
+}
+
+.portfolio-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.portfolio-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metric-label {
+    font: 500 10px var(--font-mono);
+    color: #66666e;
+    letter-spacing: 0.05em;
+}
+
+.metric-value {
+    font: 600 12px var(--font-sans);
+    color: #f0f0f2;
+    letter-spacing: -0.01em;
+}
+
+.code-snippet {
+    background: #09090a;
+    border: 1px solid #1e1e22;
+    border-radius: 5px;
+    padding: 16px;
+    font: 400 12px/1.6 var(--font-mono);
+    color: #a0a0aa;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-line {
+    white-space: nowrap;
+}
+
+.code-indent {
+    padding-left: 18px;
+}
+
+.code-snippet em {
+    color: #c792ea;
+    font-style: normal;
+}
+
+.code-punct {
+    color: #89ddff;
+}
+
+.code-str {
+    color: #ecc48d;
+}
+
+.portfolio-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-pill {
+    font: 500 10px var(--font-mono);
+    color: #b0b0b8;
+    background: #1c1c20;
+    border: 1px solid #2d2d34;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Textspalte */
+.portfolio-copy h2 {
+    margin: 0 0 20px;
+    font-size: clamp(2.4rem, 4vw, 4.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.06em;
+}
+
+.portfolio-copy p {
+    margin: 0 0 12px; /* Reduzierter Abstand unter dem ersten Absatz */
+    color: #53535a;
+    font-size: 16px;
+    line-height: 1.65;
+    letter-spacing: -0.02em;
+}
+
+.portfolio-copy .portfolio-subtext {
+    font-size: 14px;
+    color: #74747a;
+    margin-bottom: 18px; /* Vorher 30px -> zieht den Button deutlich weiter nach oben */
+}
+
+.portfolio-cta {
+    margin-top: 0; /* Entfernt den zusätzlichen oberen Abstand */
+}
+
+
+/* ==========================================================================
    9. CONTACT SECTION
    ========================================================================== */
 
@@ -537,21 +707,43 @@ h2 em {
    ========================================================================== */
 
 .site-footer {
-    padding-block: 25px 45px;
+    padding-block: 35px 45px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-top: 1px solid var(--color-border);
     color: #77777d;
     font: 11px var(--font-mono);
 }
 
-.site-footer div {
+.footer-legal {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.footer-tax-note {
+    color: #99999e;
+}
+
+.footer-tax-note::before {
+    content: "•";
+    margin-right: 16px;
+    color: #b0b0b5;
+}
+
+.footer-links {
     display: flex;
     gap: 25px;
 }
 
 .site-footer a {
     color: #333339;
+    transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: var(--color-accent);
 }
 
 
@@ -579,6 +771,17 @@ h2 em {
     to {
         opacity: 1;
         transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .text-link,
+    .project-card,
+    .service-arrow,
+    .portfolio-preview-card {
+        animation: none !important;
+        transition: none !important;
     }
 }
 
@@ -668,16 +871,47 @@ h2 em {
         margin-top: -10px;
     }
 
+    .portfolio-section {
+        padding-block: 100px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .portfolio-preview-card {
+        padding: 20px;
+    }
+
+    .portfolio-metrics {
+        grid-template-columns: 1fr;
+    }
+
     .contact-section {
         padding-block: 105px 95px;
     }
 
     .site-footer {
-        display: block;
-        line-height: 2.5;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+        padding-block: 30px;
     }
 
-    .site-footer div {
-        gap: 18px;
+    .footer-legal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .footer-tax-note::before {
+        display: none;
+    }
+
+    .footer-links {
+        gap: 20px;
+        flex-wrap: wrap;
     }
 }
