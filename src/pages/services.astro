@@ -1,8 +1,14 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
+
+const services = [
+    ['01', 'Software Solutions', 'Individuelle Tools und Anwendungen, die Abläufe vereinfachen und Teams schneller machen.'],
+    ['02', 'Web & Digital', 'Schnelle, zugängliche Websites mit einer klaren Idee und technischer Substanz.'],
+    ['03', '3D & Visualization', 'Räumliche Strukturen, Produktvisualisierungen und Echtzeit-Erlebnisse.']
+];
 ---
 
-<Layout title="Lennart Mahling - Impressum">
+<Layout title="Lennart Mahling - Leistungen">
     <header class="site-header">
         <div class="container">
             <a class="wordmark" href="/#top" aria-label="Zur Startseite">LM<span>•</span></a>
@@ -16,6 +22,56 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </header>
 
+    <main class="container subpage" id="top">
+        <section class="subpage-hero">
+            <div>
+                <p class="subpage-kicker">03 / Leistungen</p>
+                <h1>Was ich<br /><em>beitrage.</em></h1>
+            </div>
+            <p class="subpage-lede">
+                Eine partnerschaftliche Verbindung aus Strategie, Gestaltung und Engineering – passend zu dem, was Ihr Projekt wirklich braucht.
+            </p>
+        </section>
+
+        <section class="subpage-section">
+            <div class="service-cards">
+                {services.map((service) => (
+                        <article class="service-card">
+                            <b>{service[0]}</b>
+                            <div>
+                                <h3>{service[1]}</h3>
+                                <p>{service[2]}</p>
+                            </div>
+                            <span class="subpage-label">Konzept · Design · Build</span>
+                        </article>
+                ))}
+            </div>
+        </section>
+
+        <section class="subpage-section subpage-grid">
+            <p class="subpage-label">Zusammenarbeit</p>
+            <div class="subpage-copy">
+                <p>
+                    Jedes Projekt hat individuelle Ansprüche: Ich entwickle Lösungen, setze Konzepte nach ihren Vorgaben um und arbeite mich in neue Herausforderungen ein.
+                </p>
+                <a class="text-link" href="mailto:info@lennart-mahling.de">
+                    Unverbindlich kennenlernen <span>→</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="services-note">
+            <span class="subpage-label">Was als Nächstes kommt</span>
+            <p>
+                Ein guter Prozess bleibt beweglich. Nach dem Launch schaue ich mit Ihnen weiter: Was darf wachsen, und wo steckt die nächste gute Idee?
+            </p>
+        </section>
+
+        <section class="page-callout">
+            <h2>Was können wir<br /><em>gemeinsam bauen?</em></h2>
+            <a href="mailto:info@lennart-mahling.de">Gespräch beginnen ↗</a>
+        </section>
+    </main>
 
     <footer class="site-footer container">
         <div class="footer-legal">

@@ -1,27 +1,151 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
+
+const projects = [
+    {
+        category: 'Software Development',
+        title: '[C#] Inventory Management System',
+        color: 'catalog--software',
+        href: 'https://github.com/LennartMahling/InventoryManagement',
+        descriptionTitle: 'Ordnung wird System',
+        description:
+            'Eine digitale Inventarverwaltung, die Bestände strukturiert erfasst, Informationen schnell zugänglich macht und Abläufe vereinfacht.'
+    },
+    {
+        category: 'Web Development',
+        title: '[Astro] Personal Website',
+        color: 'catalog--web',
+        href: 'https://github.com/LennartMahling/lennart-mahling-website',
+        descriptionTitle: 'Ideen werden digital',
+        description:
+            'Eine von Grund auf entwickelte Website, die Design, Entwicklung und persönliche Projekte in einer klaren digitalen Experience verbindet.'
+    },
+    {
+        category: '3D Art',
+        title: '[Blender] Hessische Wohnhäuser',
+        color: 'catalog--3d',
+        href: 'https://www.linkedin.com/in/lennart-mahling-677100301/overlay/Project/1031562057/treasury/?profileId=ACoAAE0UX7sBiE1g1LxuRxidEW44ZqCDRlIIzVs',
+        descriptionTitle: 'Architektur wird greifbar',
+        description:
+            '3D-Modelle hessischer Wohnhäuser, produziert für den Bundeswehr Mod Squad nach Vorbild realer Gebäude. Zur Texturierung wurde Adobe Substance 3D Painter genutzt.'
+    },
+    {
+        category: '3D Art',
+        title: '[UE5.7] Fulda Gap - Bundeswehr Mod Squad',
+        color: 'catalog--software',
+        href: 'https://bwmod.com/2024/08/19/progress-update-no-9/',
+        descriptionTitle: 'Geschichte wird Spielwelt',
+        description:
+            'Eine in Unreal Engine 5.7 entwickelte Spielumgebung, die historische Schauplätze und militärische Strukturen des Kalten Krieges als begehbare Welt erlebbar macht.'
+    }
+];
 ---
 
-<Layout title="Lennart Mahling - Impressum">
+<Layout title="Lennart Mahling - Projekte">
     <header class="site-header">
         <div class="container">
-            <a class="wordmark" href="/#top" aria-label="Zur Startseite">LM<span>•</span></a>
+            <a class="wordmark" href="/#top" aria-label="Zur Startseite">
+                LM<span>•</span>
+            </a>
+
             <nav aria-label="Hauptnavigation">
                 <a href="/#ueber-mich">Über mich</a>
                 <a href="/#arbeiten">Arbeiten</a>
                 <a href="/#leistungen">Leistungen</a>
                 <a href="/#portfolio">Portfolio</a>
             </nav>
-            <a class="header-contact" href="/#kontakt">Projekt starten<span aria-hidden="true">↗</span></a>
+
+            <a class="header-contact" href="/#kontakt">
+                Projekt starten<span aria-hidden="true">↗</span>
+            </a>
         </div>
     </header>
 
+    <main class="container subpage" id="top">
 
+        <!-- Hero -->
+        <section class="subpage-hero">
+            <div>
+                <p class="subpage-kicker">02 / Projekte</p>
+
+                <h1>
+                    Ideen<br />
+                    Konzepte<br />
+                    Projekte
+                </h1>
+            </div>
+
+            <p class="subpage-lede">
+                Von der ersten Zeile Code bis zum ausführbaren Programm:<br />
+                ausgewählte Projekte aus Web, Software und 3D, die Ideen in konkrete Ergebnisse verwandeln.
+            </p>
+        </section>
+
+        <!-- Projects -->
+        <section class="subpage-section">
+            <div class="project-list">
+
+                {projects.map((project) => (
+                        <div class="project-row">
+
+                            <!-- Catalog Card -->
+                            <a
+                                    class={`catalog-card ${project.color}`}
+                                    href={project.href}
+                            >
+                                <div class="catalog-shape" aria-hidden="true"></div>
+
+                                <span class="catalog-type">
+                                {project.category}
+                            </span>
+
+                                <h3>{project.title}</h3>
+                            </a>
+
+                            <!-- Project Description -->
+                            <div class="project-description">
+                                <a
+                                        href={project.href}
+                                        class="project-description-link"
+                                >
+                                    <h3>
+                                        {project.descriptionTitle}
+                                        <span aria-hidden="true"></span>
+                                    </h3>
+                                </a>
+
+                                <p>{project.description}</p>
+                            </div>
+
+                        </div>
+                ))}
+
+            </div>
+        </section>
+
+        <!-- Callout -->
+        <section class="page-callout">
+            <h2>
+                Erzählen Sie mir<br />
+                <em>von Ihrem Vorhaben.</em>
+            </h2>
+
+            <a href="mailto:info@lennart-mahling.de">
+                Projekt anfragen ↗
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="site-footer container">
         <div class="footer-legal">
             <span>© {new Date().getFullYear()} Lennart Mahling</span>
-            <span class="footer-tax-note">Kleinunternehmer gem. § 19 UStG</span>
+            <span class="footer-tax-note">
+                Kleinunternehmer gem. § 19 UStG
+            </span>
         </div>
+
         <div class="footer-links">
             <a href="/impressum">Impressum</a>
             <a href="/datenschutz">Datenschutz</a>

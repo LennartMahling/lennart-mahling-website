@@ -1,0 +1,414 @@
+/* Dedicated styles for the four detail pages. The global and legal styles remain untouched. */
+
+.subpage {
+    padding: clamp(90px, 14vw, 180px) 0 150px;
+}
+
+.subpage-hero {
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;
+    gap: 40px;
+    align-items: end;
+    border-bottom: 1px solid #d4d4d1;
+    padding-bottom: 70px;
+}
+
+.subpage-kicker {
+    font: 500 11px 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #77777d;
+}
+
+.subpage h1 {
+    font-size: clamp(3.4rem, 8vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+    margin: 18px 0 0;
+}
+
+.subpage h1 em,
+.subpage h2 em {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+}
+
+.subpage-lede {
+    max-width: 600px;
+    margin: 0;
+    color: #56565d;
+    font-size: clamp(1.25rem, 2.3vw, 2rem);
+    line-height: 1.4;
+    letter-spacing: -0.04em;
+}
+
+.subpage-section {
+    padding: 100px 0;
+    border-bottom: 1px solid #d4d4d1;
+}
+
+.subpage-section:last-child {
+    border-bottom: 0;
+}
+
+.subpage h2 {
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.07em;
+    margin: 0 0 50px;
+}
+
+.subpage-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+}
+
+.subpage-label {
+    font: 500 11px 'DM Mono', monospace;
+    text-transform: uppercase;
+    color: #77777d;
+    letter-spacing: 0.08em;
+}
+
+.subpage-copy {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #56565d;
+    max-width: 690px;
+}
+
+.subpage-copy p {
+    margin: 0 0 25px;
+}
+
+.detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #d4d4d1;
+}
+
+.detail-list li {
+    display: grid;
+    grid-template-columns: 18% 1fr;
+    gap: 20px;
+    padding: 23px 0;
+    border-bottom: 1px solid #d4d4d1;
+}
+
+.detail-list strong {
+    font: 500 11px 'DM Mono', monospace;
+    text-transform: uppercase;
+    color: #77777d;
+}
+
+.detail-list span {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.page-callout {
+    background: #171719;
+    color: #f5f5f3;
+    padding: 55px;
+    border-radius: 5px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.page-callout h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 4.4rem);
+}
+
+.page-callout a {
+    border: 1px solid #66666c;
+    border-radius: 99px;
+    padding: 14px 21px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.project-catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.catalog-card {
+    min-height: 420px;
+    border-radius: 5px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-6px);
+}
+
+.catalog-card:nth-child(1) {
+    background: radial-gradient(circle at 70% 25%, #a994ff, #2e197d 68%);
+    color: white;
+}
+
+.catalog-card:nth-child(2) {
+    background: #c7ff00;
+}
+
+.catalog-card:nth-child(3) {
+    background: #2355dc;
+    color: white;
+}
+
+.catalog-card:nth-child(4) {
+    background: #ece9e1;
+}
+
+.catalog-card h3 {
+    font-size: clamp(1.7rem, 3vw, 3.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+    margin: 14px 0 0;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+}
+
+.catalog-type {
+    font: 500 10px 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+}
+
+.catalog-shape {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    right: 12%;
+    top: 12%;
+    border-radius: 48% 52% 64% 36%;
+    background: linear-gradient(135deg, #fff, #6e44db 60%, #1a1253);
+    transform: rotate(25deg);
+}
+
+.catalog-card:nth-child(2) .catalog-shape {
+    background: linear-gradient(135deg, #fff, #69aa00);
+    border-radius: 50%;
+    box-shadow: 20px 30px 20px #567a0033;
+}
+
+.catalog-card:nth-child(3) .catalog-shape {
+    border: 28px solid #a8e9ff;
+    background: none;
+    border-radius: 50%;
+    transform: rotate(-22deg);
+}
+
+.catalog-card:nth-child(4) .catalog-shape {
+    background: linear-gradient(135deg, #232323, #999);
+    border-radius: 50%;
+    filter: grayscale(1);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    border: 1px solid #d4d4d1;
+    padding: 28px;
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-card:nth-child(2) {
+    background: #e8e2ff;
+}
+
+.service-card:nth-child(3) {
+    background: #d9f4f0;
+}
+
+.service-card b {
+    font: 500 11px 'DM Mono', monospace;
+    color: #77777d;
+}
+
+.service-card h3 {
+    font-size: 2rem;
+    letter-spacing: -0.06em;
+    margin: 20px 0 10px;
+}
+
+.service-card p {
+    color: #5d5d64;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.terminal-card {
+    background: #111113;
+    color: #e5e5e7;
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 30px 60px #0000001f;
+}
+
+.terminal-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #29292d;
+    padding-bottom: 20px;
+    font: 10px 'DM Mono', monospace;
+    color: #888890;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-dots i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #444449;
+}
+
+.terminal-body {
+    padding-top: 24px;
+    font: 12px/1.8 'DM Mono', monospace;
+}
+
+.terminal-body em {
+    color: #c792ea;
+    font-style: normal;
+}
+
+.terminal-body strong {
+    color: #89ddff;
+    font-weight: 400;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+.skill-tags span {
+    border: 1px solid #38383e;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #b0b0b8;
+    font: 10px 'DM Mono', monospace;
+}
+
+.timeline {
+    border-top: 1px solid #d4d4d1;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid #d4d4d1;
+}
+
+.timeline-item time {
+    font: 11px 'DM Mono', monospace;
+    color: #77777d;
+}
+
+.timeline-item h3 {
+    margin: 0 0 6px;
+    font-size: 1.3rem;
+    letter-spacing: -0.04em;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #65656c;
+    line-height: 1.55;
+}
+
+.subpage .text-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+}
+
+.subpage .text-link span {
+    margin-left: 8px;
+}
+
+@media (max-width: 700px) {
+    .subpage {
+        padding: 90px 0;
+    }
+
+    .subpage-hero,
+    .subpage-grid,
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .subpage-section {
+        padding: 70px 0;
+    }
+
+    .project-catalog,
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-card {
+        min-height: 340px;
+    }
+
+    .page-callout {
+        display: block;
+        padding: 32px;
+    }
+
+    .page-callout a {
+        display: inline-block;
+        margin-top: 28px;
+    }
+
+    .detail-list li {
+        grid-template-columns: 30% 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
