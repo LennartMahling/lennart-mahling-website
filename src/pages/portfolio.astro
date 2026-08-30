@@ -1,44 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import Zillbach from '../assets/Zillbach_02.png';
+import HessianHouse from '../assets/HessianHouse.jpg';
+import Wetterbox from '../assets/Wetterbox_01.png';
+
 const portfolioProjects = [
-    {
-        category: '3D Art · Blender',
-        title: 'Hessische Wohnhäuser in Blender & Substance Painter',
-        href: 'https://www.linkedin.com/in/lennart-mahling-677100301/overlay/Project/1031562057/treasury/?profileId=ACoAAE0UX7sBiE1g1LxuRxidEW44ZqCDRlIIzVs'
+{
+    category: '3D Art · Blender',
+    title: 'Hessische Wohnhäuser in Blender & Substance Painter',
+    href: 'https://www.linkedin.com/in/lennart-mahling-677100301/overlay/Project/1031562057/treasury/?profileId=ACoAAE0UX7sBiE1g1LxuRxidEW44ZqCDRlIIzVs',
+    image: HessianHouse,
+    alt: 'Hessische Wohnhäuser in Blender und Substance Painter'
     },
-    {
-        category: 'Software · C# .NET10',
-        title: 'Inventory Management System für das THW',
-        href: 'https://github.com/LennartMahling/InventoryManagement'
+{
+    category: 'Software · C# .NET 10',
+    title: 'Inventory Management System für das THW',
+    href: 'https://github.com/LennartMahling/InventoryManagement',
+    image: null,
+    alt: 'Inventory Management System für das THW'
     },
-    {
-        category: 'UAV · CAD & Ardupulot',
-        title: '3D-Druck modulare Drohne in Fusion360 mit Flightcontrols in Ardupilot',
-        href: 'https://www.linkedin.com/in/lennart-mahling-677100301/'
+{
+    category: 'UAV · CAD & ArduPilot',
+    title: 'Modulare 3D-gedruckte Drohne in Fusion 360 mit Flight Controls in ArduPilot',
+    href: 'https://www.linkedin.com/in/lennart-mahling-677100301/',
+    image: null,
+    alt: 'Modulare Drohne aus Fusion 360'
     },
-    {
-        category: 'Unreal Engine · Leveldesign',
-        title: 'Leveldesign in UE5.7 der "Fulda Gap"',
-        href: 'https://bwmod.com/2024/08/19/progress-update-no-9/'
+{
+    category: 'Unreal Engine · Leveldesign',
+    title: 'Leveldesign in UE5.7 der "Fulda Gap"',
+    href: 'https://bwmod.com/2024/08/19/progress-update-no-9/',
+    image: Zillbach,
+    alt: 'Leveldesign der Fulda Gap in Unreal Engine 5.7'
     },
-    {
-        category: 'Software · Astro',
-        title: 'Meine eigene Homepage meines Unternehmens',
-        href: 'https://github.com/LennartMahling/lennart-mahling-website'
+{
+    category: 'Software · Astro',
+    title: 'Meine Unternehmenswebsite',
+    href: 'https://github.com/LennartMahling/lennart-mahling-website',
+    image: null,
+    alt: 'Persönliche Unternehmenswebsite mit Astro'
     },
-    {
-        category: 'Software · ESP32 Wetterstation',
-        title: 'EPS32 Wetterstation mit HTTP zum Webserver und Chart.js',
-        href: ''
+{
+    category: 'Software · ESP32 Wetterstation',
+    title: 'ESP32 Wetterstation mit HTTP, Webserver und Chart.js',
+    href: '',
+    image: Wetterbox,
+    alt: 'ESP32 Wetterstation mit Webserver'
     }
 ];
 ---
 
 <Layout title="Lennart Mahling - Portfolio">
+
     <header class="site-header">
         <div class="container">
-            <a class="wordmark" href="/#top" aria-label="Zur Startseite">
+
+            <a
+                    class="wordmark"
+                    href="/#top"
+                    aria-label="Zur Startseite"
+            >
                 LM<span>•</span>
             </a>
 
@@ -50,14 +72,22 @@ const portfolioProjects = [
             </nav>
 
             <a class="header-contact" href="/#kontakt">
-                Projekt starten<span aria-hidden="true">↗</span>
+                Projekt starten
+                <span aria-hidden="true">↗</span>
             </a>
+
         </div>
     </header>
 
+
     <main class="container subpage" id="top">
 
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+
         <section class="portfolio-intro">
+
             <div>
                 <p class="subpage-kicker">04 / Portfolio</p>
 
@@ -68,37 +98,59 @@ const portfolioProjects = [
             </div>
 
             <p class="subpage-lede">
-                Eine kuratierte Sammlung aus Software, 3D Art und visuellen Experimenten – mit Kontext statt nur Oberfläche.
+                Eine kuratierte Sammlung aus Software, 3D Art und visuellen
+                Experimenten – mit Kontext statt nur Oberfläche.
             </p>
+
         </section>
 
-        <section class="subpage-section">
-            <p class="subpage-label">Ausstellung / Projekte</p>
 
+        <!-- =====================================================
+             PORTFOLIO PROJECTS
+             ===================================================== -->
+
+        <section class="subpage-section">
+
+            <p class="subpage-label">
+                Ausstellung / Projekte
+            </p>
             <div class="portfolio-showcase">
                 {portfolioProjects.map((project) => (
                         <a
-                                class="portfolio-project"
+                                class:list={[
+                                    'portfolio-project',
+                                    {
+                                        'portfolio-project--placeholder': !project.image
+                                    }
+                                ]}
                                 href={project.href}
                         >
+                            {project.image && (
+                                    <img
+                                            src={project.image.src}
+                                            alt={project.title}
+                                    />
+                            )}
+
                             <span>{project.category}</span>
                             <strong>{project.title}</strong>
-                            <small class="portfolio-image-note">
-                                <!--Optional: Farbfläche durch Projektbild ersetzen-->
-                            </small>
                         </a>
                 ))}
             </div>
 
-            <p class="portfolio-image-help">
-                <!--Vorlage: Ersetze die Farbfläche im jeweiligen Eintrag durch
-                <code>&lt;img src="/images/projekt.jpg" alt="Projektbeschreibung" /&gt;</code>.-->
-            </p>
         </section>
 
+
+        <!-- =====================================================
+             PORTFOLIO / TIMELINE
+             ===================================================== -->
+
         <section class="subpage-section portfolio-layout">
+
             <div class="terminal-card">
+
                 <div class="terminal-top">
+
                     <span class="terminal-dots">
                         <i></i>
                         <i></i>
@@ -106,15 +158,36 @@ const portfolioProjects = [
                     </span>
 
                     <span>SELECTED_WORK // 2026</span>
+
                 </div>
 
+
                 <div class="terminal-body">
-                    <span><em>const</em> approach = &#123;</span><br />
-                    <span>&nbsp;&nbsp;curiosity: <strong>true</strong>,</span><br />
-                    <span>&nbsp;&nbsp;craft: <strong>'deliberate'</strong>,</span><br />
-                    <span>&nbsp;&nbsp;direction: <strong>'forward'</strong></span><br />
+
+                    <span>
+                        <em>const</em> approach = &#123;
+                    </span>
+                    <br />
+
+                    <span>
+                        &nbsp;&nbsp;curiosity: <strong>true</strong>,
+                    </span>
+                    <br />
+
+                    <span>
+                        &nbsp;&nbsp;craft: <strong>'deliberate'</strong>,
+                    </span>
+                    <br />
+
+                    <span>
+                        &nbsp;&nbsp;direction: <strong>'forward'</strong>
+                    </span>
+                    <br />
+
                     <span>&#125;</span>
+
                 </div>
+
 
                 <div class="skill-tags">
                     <span>C# / .NET</span>
@@ -122,54 +195,91 @@ const portfolioProjects = [
                     <span>Blender</span>
                     <span>Realtime 3D</span>
                 </div>
+
             </div>
 
+
+            <!-- Timeline -->
+
             <div>
-                <p class="subpage-label">Mein Werdegang</p>
+
+                <p class="subpage-label">
+                    Mein Werdegang
+                </p>
 
                 <h2>
                     Gebaut aus<br />
                     <em>vielen kleinen Schritten.</em>
                 </h2>
 
+
                 <div class="timeline">
+
                     <div class="timeline-item">
+
                         <time>2023</time>
 
                         <div>
                             <h3>Bundeswehr Mod Squad</h3>
+
                             <p>
-                                Für das Spiel "Squad" entwickle ich mit anderen Freiwilligen die Fraktion der Bundeswehr. Dabei bin ich aktuell Hauptführend für den Bereich Leveldesign und 3D Art für Map-Assets.
+                                Für das Spiel „Squad“ entwickle ich gemeinsam mit
+                                anderen Freiwilligen die Fraktion der Bundeswehr.
+                                Mein Schwerpunkt liegt dabei auf Leveldesign und
+                                der Erstellung von 3D-Assets für die Spielwelt.
                             </p>
                         </div>
+
                     </div>
 
+
                     <div class="timeline-item">
-                        <time>2025</time>
+
+                        <time>2026</time>
 
                         <div>
-                            <h3>Bundesfreiwilligendienst THW</h3>
+                            <h3>Bundesfreiwilligendienst beim THW</h3>
+
                             <p>
-                                Ich leiste meinen Bundesfreiwilligendienst beim THW. Neben grundlegenden Aufgaben, die zur Resilienz beitragen, bringe ich meine Skills von Entwicklung moderner und smarter Software ein.
+                                Im Bundesfreiwilligendienst beim THW unterstütze ich
+                                neben den alltäglichen Aufgaben auch die Entwicklung
+                                moderner und praxisnaher Softwarelösungen.
                             </p>
                         </div>
+
                     </div>
 
+
                     <div class="timeline-item">
+
                         <time>Zukunft</time>
 
                         <div>
-                            <h3>Bildungsgang</h3>
+                            <h3>Technische Informatik & neue Perspektiven</h3>
+
                             <p>
-                                Ich bereite mich nebenbei bestmöglich auf ein Studium vor, voraussichtlich in der (Technischen) Informatik. Mit meinem Interesse über die Bundeswehr, interessiert mich sehr die Branche der Rüstungs- & Luftfahrtindustrie.
+                                Ich bereite mich auf ein Studium im Bereich Informatik
+                                vor. Besonders interessieren mich technische Systeme,
+                                Softwareentwicklung sowie die Luft- und Raumfahrt-
+                                und Verteidigungsindustrie.
                             </p>
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
 
+
+        <!-- =====================================================
+             CONTACT
+             ===================================================== -->
+
         <section class="page-callout">
+
             <h2>
                 Ein Blick auf<br />
                 <em>das nächste Kapitel?</em>
@@ -178,22 +288,47 @@ const portfolioProjects = [
             <a href="mailto:info@lennart-mahling.de">
                 Kontakt aufnehmen ↗
             </a>
+
         </section>
 
     </main>
 
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
     <footer class="site-footer container">
+
         <div class="footer-legal">
-            <span>© {new Date().getFullYear()} Lennart Mahling</span>
+
+            <span>
+                © {new Date().getFullYear()} Lennart Mahling
+            </span>
+
             <span class="footer-tax-note">
                 Kleinunternehmer gem. § 19 UStG
             </span>
+
         </div>
 
+
         <div class="footer-links">
-            <a href="/impressum">Impressum</a>
-            <a href="/datenschutz">Datenschutz</a>
-            <a href="#top">Nach oben ↑</a>
+
+            <a href="/impressum">
+                Impressum
+            </a>
+
+            <a href="/datenschutz">
+                Datenschutz
+            </a>
+
+            <a href="#top">
+                Nach oben ↑
+            </a>
+
         </div>
+
     </footer>
+
 </Layout>

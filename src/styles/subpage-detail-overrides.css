@@ -3,6 +3,9 @@
 }
 
 
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
 .intro-portrait {
     min-height: 360px;
@@ -27,13 +30,16 @@
     gap: 40px;
 }
 
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
 .project-list {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
-
-
 
 .project-row {
     display: grid;
@@ -52,12 +58,11 @@
     line-height: 1.7;
 }
 
-
 .project-row .project-description h3 {
+    margin: 0 0 12px;
+    color: #15151a;
     font-size: 1.8rem;
     letter-spacing: -0.05em;
-    color: #15151a;
-    margin: 0 0 12px;
     transition: transform 0.35s ease;
 }
 
@@ -65,13 +70,19 @@
     transform: translateY(-6px);
 }
 
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
 .services-note {
-    margin-top: 55px;
-    padding: 28px 0;
-    border-top: 1px solid #d4d4d1;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 40px;
+
+    margin-top: 55px;
+    padding: 28px 0;
+    border-top: 1px solid #d4d4d1;
 }
 
 .services-note p {
@@ -80,6 +91,11 @@
     font-size: 1.1rem;
     line-height: 1.65;
 }
+
+
+/* =========================================================
+   PORTFOLIO
+   ========================================================= */
 
 .portfolio-intro {
     display: grid;
@@ -92,81 +108,301 @@
     max-width: 700px;
 }
 
+
+/* =========================================================
+   PORTFOLIO GRID
+   ========================================================= */
+
 .portfolio-showcase {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
+
+/* =========================================================
+   PORTFOLIO CARD
+   ========================================================= */
+
 .portfolio-project {
-    min-height: 300px;
+    position: relative;
+
+    min-height: 340px;
     padding: 24px;
-    border-radius: 5px;
+
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    position: relative;
-    overflow: hidden;
+    justify-content: flex-end;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease;
 }
 
-.portfolio-project:nth-child(1) {
+
+/* =========================================================
+   FALLBACK DESIGN
+   Wird verwendet, wenn kein echtes Bild vorhanden ist
+   ========================================================= */
+
+.portfolio-project--placeholder {
+    color: #15151a;
+}
+
+
+/* Individuelle Hintergrundfarben */
+
+.portfolio-project--placeholder:nth-child(1) {
     background: #eeff00;
 }
 
-.portfolio-project:nth-child(2) {
+.portfolio-project--placeholder:nth-child(2) {
     background: #2355dc;
     color: #fff;
 }
 
-.portfolio-project:nth-child(3) {
+.portfolio-project--placeholder:nth-child(3) {
     background: #cec5ed;
 }
 
-.portfolio-project:nth-child(4) {
+.portfolio-project--placeholder:nth-child(4) {
     background: #222225;
     color: #fff;
 }
 
-.portfolio-project:nth-child(5) {
+.portfolio-project--placeholder:nth-child(5) {
     background: #8020a7;
     color: #fff;
 }
 
-.portfolio-project:nth-child(6) {
+.portfolio-project--placeholder:nth-child(6) {
     background: #6cd80c;
+}
+
+
+/* Dekorativer Kreis */
+
+.portfolio-project--placeholder::before {
+    content: '';
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    right: 10%;
+    top: 12%;
+
+    border-radius: 50%;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.53),
+                    rgba(0, 0, 0, 0.27)
+            );
+
+    z-index: 0;
+
+    transition:
+            transform 0.6s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+   ========================================================= */
+
+.portfolio-project img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    transition:
+            transform 0.6s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.portfolio-project::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.05) 20%,
+                    rgba(0, 0, 0, 0.15) 45%,
+                    rgba(0, 0, 0, 0.78) 100%
+            );
+
+    z-index: 1;
+
+    transition: background 0.35s ease;
+}
+
+
+/* Kein dunkles Overlay bei Placeholder-Karten */
+
+.portfolio-project--placeholder::after {
+    background:
+            linear-gradient(
+                    to bottom,
+                    transparent 20%,
+                    rgba(0, 0, 0, 0.04) 100%
+            );
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.portfolio-project:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+            0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.portfolio-project:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-project--placeholder:hover::before {
+    transform:
+            scale(1.08)
+            rotate(8deg);
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.portfolio-project span {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 10px;
+
+    font:
+            10px 'DM Mono',
+            monospace;
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+
+/* Textfarbe bei Bild */
+
+.portfolio-project:not(.portfolio-project--placeholder) span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* Textfarbe bei Placeholder */
+
+.portfolio-project--placeholder span {
+    color: rgba(21, 21, 26, 0.65);
+}
+
+
+/* Dunkle Placeholder */
+
+.portfolio-project--placeholder:nth-child(2) span,
+.portfolio-project--placeholder:nth-child(4) span,
+.portfolio-project--placeholder:nth-child(5) span {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.portfolio-project strong {
+    position: relative;
+    z-index: 2;
+
+    max-width: 90%;
+
+    font-size: clamp(1.5rem, 2.3vw, 2rem);
+    line-height: 1.05;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* Titel bei Bildern */
+
+.portfolio-project:not(.portfolio-project--placeholder) strong {
     color: #fff;
 }
 
-.portfolio-project strong {
-    font-size: 1.7rem;
-    letter-spacing: -0.05em;
-    position: relative;
-    z-index: 1;
+
+/* Titel bei Placeholder */
+
+.portfolio-project--placeholder strong {
+    color: #15151a;
 }
 
-.portfolio-project span {
-    font: 10px 'DM Mono', monospace;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 10px;
+
+/* Titel bei dunklen Placeholder */
+
+.portfolio-project--placeholder:nth-child(2) strong,
+.portfolio-project--placeholder:nth-child(4) strong,
+.portfolio-project--placeholder:nth-child(5) strong {
+    color: #fff;
 }
 
-.portfolio-project::before {
-    content: '';
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    right: 10%;
-    top: 12%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #fff8, #0004);
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .portfolio-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-project {
+        min-height: 320px;
+    }
+
+    .portfolio-project strong {
+        max-width: 100%;
+    }
+
 }
 
 @media (max-width: 700px) {
+
     .subpage {
         padding: 58px 0 90px;
     }
+
+
+    /* About / Services / Portfolio */
 
     .intro-about-grid,
     .services-note,
@@ -174,9 +410,15 @@
         grid-template-columns: 1fr;
     }
 
+
+    /* About */
+
     .intro-portrait {
         min-height: 280px;
     }
+
+
+    /* Projects */
 
     .project-row {
         grid-template-columns: 1fr;
@@ -187,7 +429,19 @@
         min-height: 300px;
     }
 
+
+    /* Portfolio */
+
     .portfolio-showcase {
         grid-template-columns: 1fr;
     }
+
+    .portfolio-project {
+        min-height: 320px;
+    }
+
+    .portfolio-project strong {
+        max-width: 100%;
+    }
 }
+
