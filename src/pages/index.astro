@@ -2,15 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 
 const services = [
-	{ number: '01', title: 'Digitale Produkte', text: 'Websites und Anwendungen, die komplexe Ideen in klare, schnelle Erlebnisse übersetzen.' },
-	{ number: '02', title: 'Marke im Raum', text: '3D-Visualisierungen und visuelle Systeme mit Charakter, Tiefe und einer eigenen Haltung.' },
-	{ number: '03', title: 'Von Idee zu Wirkung', text: 'Konzeption, Design und Entwicklung aus einer Hand – fokussiert auf das, was wirklich zählt.' },
+	{ number: '01', title: 'Softwareentwicklung', text: 'Individuelle Softwarelösungen, die auf einen konkreten Anwendungsfall zugeschnitten sind.' },
+	{ number: '02', title: 'Webdesign & Entwicklung', text: 'Moderne Websites von der Gestaltung bis zur technischen Umsetzung.' },
+	{ number: '03', title: '3D-Visualisierung', text: 'Produktvisualisierungen und Renderings für Ideen, Produkte und Konzepte.' },
 ];
 
 const projects = [
-	{ type: 'Digital Experience', title: 'Klarheit für komplexe Produkte', className: 'project--violet' },
-	{ type: '3D & Visualization', title: 'Räume, die man spüren kann', className: 'project--lime' },
-	{ type: 'Brand & Web', title: 'Ein Auftritt mit Haltung', className: 'project--blue' },
+	{ type: 'Software Developement', title: 'Individuell statt von der Stange', className: 'project--violet' },
+	{ type: '3D Visualization', title: 'Produkte. Präzise visualisiert', className: 'project--lime' },
+	{ type: 'Webdesign', title: 'Ihre digitale Visitenkarte', className: 'project--blue' },
 ];
 ---
 
@@ -32,11 +32,11 @@ const projects = [
 		<section class="hero container">
 			<div class="hero-copy">
 				<p class="eyebrow reveal">Unabhängiger 3D Artist und Developer</p>
-				<h1 class="reveal reveal--delay">Digitale Erlebnisse<br />
-					<em>mit Charakter.</em>
+				<h1 class="reveal reveal--delay">Vom Gedanken<br />
+					<em>zum Projekt.</em>
 				</h1>
 				<div class="hero-bottom reveal reveal--delay-2">
-					<p>Ich bin Lennart Mahling. Ich entwickle zugeschnittene, smarte Software und Visualisierungen für Menschen und Marken mit Ambition.</p>
+					<p>Ich bin Lennart Mahling. Ich entwickle smarte Software, Websites und 3D Projekte - von ersten Ideen bis zu funktionierenden Ergebnissen.</p>
 					<a class="round-link" href="#ueber-mich" aria-label="Ausgewählte Arbeiten ansehen">↓</a>
 				</div>
 			</div>
@@ -48,7 +48,7 @@ const projects = [
 		<section class="intro-section container" id="ueber-mich">
 			<p class="section-label">Wer und Was</p>
 			<div class="intro-copy">
-				<p>Gutes Design fühlt sich <span>selbstverständlich</span> an. Dahinter steckt jedoch ein Prozess aus Neugier, Präzision und vielen klugen Entscheidungen.</p>
+				<p>Ich lerne am liebsten, indem ich Dinge baue. Von Software über Webentwicklung bis 3D: Mich interessiert, wie Dinge <span>funktionieren</span> und was daraus entstehen kann.</p>
 				<a class="text-link" href="/intro">Mehr über wer ich bin und was ich mache<span>→</span></a>
 			</div>
 		</section>
@@ -65,7 +65,7 @@ const projects = [
 			<div class="container">
 				<div class="section-heading section-heading--light">
 					<p class="section-label">Meine Leistungen</p>
-					<p>Strategisch denken. Konsequent gestalten. Sorgfältig umsetzen.</p>
+					<p>Ideen entwickeln. Dinge ausprobieren. Lösungen bauen.</p>
 				</div>
 				<div class="services-list">{services.map((service) => (<article class="service-item"><span>{service.number}</span>
 					<h3>{service.title}</h3>
@@ -79,7 +79,7 @@ const projects = [
 		<section class="portfolio-section container" id="portfolio">
 			<div class="section-heading">
 				<p class="section-label">Werdegang & Expertise</p>
-				<p>Kontinuierliche Entwicklung in Technologie, Design und Systemarchitektur.</p>
+				<p>Was ich bisher gelernt, gebaut und ausprobiert habe und was daraus entstanden ist.</p>
 			</div>
 
 			<div class="portfolio-grid">
@@ -119,12 +119,12 @@ const projects = [
 				</div>
 
 				<div class="portfolio-copy">
-					<h2>Technisches Fundament<br /><em>mitgestalten.</em></h2>
+					<h2>Lernen durch<br /><em>machen.</em></h2>
 					<p>
-						Neben der Arbeit an Kundenprojekten vertiefe ich fortlaufend mein Wissen in zeitgemäßer Softwarearchitektur, Experimenten mit Echtzeit-Graphics und modernen Webtechnologien.
+						 Ich eigne mir neue Kenntnise am liebsten an, indem ich sie selbst ausprobiere und in eigenen Projekte einsetze. Das Ganze zielgerichtet und mit Fokus auf meinen zukünftigen Bildungsweg.
 					</p>
 					<p class="portfolio-subtext">
-						Mein vollständiges Portfolio bietet einen transparenten Einblick in Qualifikationen, Zertifikate, persönliche Entwicklungsprojekte sowie meinen technischen Werdegang.
+						Mein vollständiges Portfolio gibt einen Einblick in meine Projekte, Qualifikationen und die Entwicklung meiner Fähigkeiten.
 					</p>
 					<a class="text-link portfolio-cta" href="/portfolio">
 						Vollständiges Portfolio ansehen <span>→</span>
@@ -135,7 +135,7 @@ const projects = [
 
 		<section class="contact-section container" id="kontakt">
 			<p class="section-label">Lassen Sie uns sprechen</p>
-			<h2>Eine gute Idee<br />verdient einen <em>starken Anfang.</em></h2>
+			<h2>Eine Idee, ein Projekt<br />oder eine spannende Frage? <em>Schreiben Sie mir.</em></h2>
 			<a class="contact-mail" href="mailto:info@lennart-mahling.de">info@lennart-mahling.de
 				<span>↗</span>
 			</a>
