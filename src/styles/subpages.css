@@ -1,5 +1,3 @@
-/* Dedicated styles for the four detail pages. The global and legal styles remain untouched. */
-
 .subpage {
     padding: clamp(90px, 14vw, 180px) 0 150px;
 }
