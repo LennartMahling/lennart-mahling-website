@@ -33,3 +33,4 @@ pnpm-debug.log*
 # all files inside src/assets
 
 src/assets/*
+!src/assets/.gitkeep
