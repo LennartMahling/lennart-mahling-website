@@ -61,7 +61,7 @@ a {
 }
 
 #ueber-mich {
-    scroll-margin-top: -35px;
+    scroll-margin-top: 0px;
 }
 
 #arbeiten {
@@ -69,11 +69,11 @@ a {
 }
 
 #leistungen {
-    scroll-margin-top: -100px;
+    scroll-margin-top: 0px;
 }
 
 #portfolio {
-    scroll-margin-top: -70px;
+    scroll-margin-top: -35px;
 }
 
 #kontakt{
