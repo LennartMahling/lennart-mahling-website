@@ -797,8 +797,21 @@ h2 em {
 
 @media (max-width: 700px) {
     .container {
-        width: min(100% - 40px, 1344px);
+        width: calc(100% - 40px);
+        max-width: 1344px;
     }
+
+    .site-header > .container,
+    .hero.container {
+        width: calc(100% - 40px);
+        max-width: 1344px;
+    }
+
+    #top {
+        width: 100%;
+        min-width: 0;
+    }
+
 
     .site-header {
         height: 72px;
@@ -885,8 +898,18 @@ h2 em {
     }
 
     .portfolio-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 40px;
+        min-width: 0;
+    }
+
+    .portfolio-grid > * {
+        min-width: 0;
+    }
+
+    .code-snippet {
+        max-width: 100%;
+        overflow-x: auto;
     }
 
     .portfolio-preview-card {
