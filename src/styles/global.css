@@ -148,16 +148,8 @@ nav a {
     position: relative;
     overflow: hidden;
     padding-block: 100px;
-
-    width: calc(100% - 64px);
-    max-width: none;
-    margin-inline: auto;
 }
 
-.site-header .container {
-    width: calc(100% - 64px);
-    max-width: none;
-}
 
 .hero-copy {
     position: relative;
@@ -809,6 +801,10 @@ h2 em {
     }
 
     .site-header {
+        height: 72px;
+    }
+
+    .site-header > .container {
         height: 72px;
     }
 
